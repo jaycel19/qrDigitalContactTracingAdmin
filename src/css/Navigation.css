@@ -1,0 +1,35 @@
+.Navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Navigation > ul{
+    text-decoration: none;
+    width: 100%;
+    background-color: rgb(99, 144, 173);
+    padding: 0px;
+    margin: 0px;
+    border-top: 2px solid rgb(21, 58, 82);
+    text-align: center;
+    border-bottom: 2px solid rgb(21, 58, 82);
+}
+
+.Navigation > ul > a > li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(135, 205, 250);
+    margin: 2px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.Navigation > ul > a> li:hover{
+    text-decoration: underline;
+    background-color: rgba(135, 205, 250, .5);
+    transition: .5;
+    cursor: pointer;
+}

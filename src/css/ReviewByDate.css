@@ -1,0 +1,16 @@
+table, th, td{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.ReviewByDate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+th, td{
+    padding: 10px;
+    text-align: center;
+}

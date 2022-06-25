@@ -1,0 +1,11 @@
+.Header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(73, 163, 184, 0.3);
+}
+
+.Header > h1, h2{
+    color: rgb(28, 81, 115);
+}
