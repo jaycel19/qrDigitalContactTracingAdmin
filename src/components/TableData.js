@@ -7,9 +7,7 @@ const TableData = (props) =>{
             <td>{props.address}</td>
             <td>{props.contact}</td>
             <td>{props.timeIn}</td>
-            <td>{props.month}</td>
-            <td>{props.day}</td>
-            <td>{props.year}</td>
+            <td>{props.dateIn}</td>
         </tr>
     );
 }

@@ -33,3 +33,10 @@
     transition: .5;
     cursor: pointer;
 }
+
+.Navigation > ul > .username{
+    list-style-type: none;
+    padding: 10px;
+    float: left;
+    color: white;
+}
