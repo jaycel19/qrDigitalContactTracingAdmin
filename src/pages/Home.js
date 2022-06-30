@@ -3,6 +3,7 @@ import "./../css/Home.css";
 import axios from "axios";
 import TableData from "./../components/TableData";
 
+
 const Home = () => {
     const dateNow = new Date();
     const newDay = dateNow.getDate();

@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import '../css/LoginRegister.css';
+import { ThreeDots } from 'react-loader-spinner';
 
 const Login = ({ setAuthenticated, authenticated, setCurrentUser }) => {
 
@@ -12,7 +13,7 @@ const Login = ({ setAuthenticated, authenticated, setCurrentUser }) => {
     username: '',
     password: ''
   });
-
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOnchange = (event) => {
     const value = event.target.value;
@@ -26,13 +27,17 @@ const Login = ({ setAuthenticated, authenticated, setCurrentUser }) => {
 
   const handleLogin = () => {
     const login = async () =>{
+      setIsLoading(true)
       const res = await axios.post(LOGINURL, user);
       setCurrentUser(res.data);
       if(res.data.isLog !== undefined){
         setAuthenticated(res.data.isLog);
+		alert("Logged in!");
+		setIsLoading(false)
       }else{
         setAuthenticated(res.data);
-        console.log(res.data)
+		alert("Wrong email or password");
+		setIsLoading(false)
       } 
       navigate("/");
       return res;
@@ -43,14 +48,18 @@ const Login = ({ setAuthenticated, authenticated, setCurrentUser }) => {
   return (
      <div className="Login" style={{display: 'flex', alignItems: "center", flexDirection: 'column'}}>
         <h3>Login</h3>
-        <div style={{display: 'flex', flexDirection: 'column', width: '50vw', justifyContent: 'center'}}>
-            <input onChange={handleOnchange} name="username" type="text" placeholder="Username" />
+		 <div style={{display: 'flex', flexDirection: 'column', width: '50vw', justifyContent: 'center', alignItems: 'center'}}>
+			{isLoading ? <ThreeDots color="#00bff" heigh={100} width={100} />
+			: (<> 
+			<input onChange={handleOnchange} name="username" type="text" placeholder="Username" />
             <input onChange={handleOnchange} name="password" type="password" placeholder="Password" />
             <div style={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
                 <button onClick={handleLogin}>Login</button>
                 <p>Or</p>
                 <Link to="/admin/register"><button>Register</button></Link>
             </div>
+			</>)
+			}
         </div>
     </div>
   )

@@ -11,9 +11,13 @@ import {
   useNavigate
 } from "react-router-dom";
 
+
+
+
 import ReviewByDate from './pages/ReviewByDate';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 function App() {
 
@@ -25,7 +29,7 @@ function App() {
       return <Navigate to="/" replace />      
     }
   }, [authenticated])
-  
+
 
   return (
     <Router>
